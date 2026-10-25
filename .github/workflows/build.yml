@@ -22,11 +22,11 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Force create Android folder
+      # هذه الخطوة السحرية ستقوم بإنشاء مجلد الأندرويد تلقائياً
+      - name: Generate Android Files
         run: |
-          rm -rf android
-          flutter create --platforms=android .
-
+          flutter create --platforms=android --project-name fadnia_library --org com.fadnia .
+          
       - name: Get dependencies
         run: flutter pub get
 
